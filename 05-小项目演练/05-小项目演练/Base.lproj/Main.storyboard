@@ -14,13 +14,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hRA-ys-tK2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hRA-ys-tK2" customClass="PersonCell" customModule="_5_小项目演练" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hRA-ys-tK2" id="c2f-0a-b6W">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpC-lg-swO">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpD-LF-pUC">
+                                            <rect key="frame" x="325" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NpC-lg-swO" firstAttribute="top" secondItem="c2f-0a-b6W" secondAttribute="top" constant="11" id="JpP-Pf-hAb"/>
+                                        <constraint firstAttribute="trailing" secondItem="YpD-LF-pUC" secondAttribute="trailing" constant="8" id="OR8-C8-M6Y"/>
+                                        <constraint firstItem="YpD-LF-pUC" firstAttribute="top" secondItem="c2f-0a-b6W" secondAttribute="top" constant="11" id="hVO-UP-M5h"/>
+                                        <constraint firstItem="NpC-lg-swO" firstAttribute="leading" secondItem="c2f-0a-b6W" secondAttribute="leading" constant="8" id="kop-tK-Oxp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ageLabel" destination="YpD-LF-pUC" id="3I0-db-Z7e"/>
+                                    <outlet property="nameLabel" destination="NpC-lg-swO" id="V0p-io-rmE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

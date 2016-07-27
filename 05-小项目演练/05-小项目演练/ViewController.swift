@@ -75,11 +75,29 @@ extension ViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! PersonCell
         
-        cell.backgroundColor = UIColor.init(colorLiteralRed: Float(rand()%255)/256.0, green: Float(rand()%255)/256.0, blue: Float(rand()%255)/256.0, alpha: 1)
+//        cell.backgroundColor = UIColor.init(colorLiteralRed: Float(rand()%255)/256.0, green: Float(rand()%255)/256.0, blue: Float(rand()%255)/256.0, alpha: 1)
+        
+        cell.personModel = persons![indexPath.row]
         
         return cell
+    }
+    //MARK: 代理方法
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let VC = TwoController()
+        VC.model = persons![indexPath.row]
+        VC.closure = { [weak self] ()->() in
+        
+            self?.tableView.reloadData()
+        }
+      
+        
+        
+        navigationController?.pushViewController(VC, animated: true)
+        
+        
     }
 
 }
